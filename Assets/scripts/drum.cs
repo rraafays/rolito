@@ -6,7 +6,8 @@ using UnityEngine.Events;
 public class drum : MonoBehaviour
 {
   [SerializeField] private AudioSource audio_source;
-  [SerializeField] private UnityEvent trigger;
+  [SerializeField] private UnityEvent beat;
+  [SerializeField] private UnityEvent forward;
 
   private bool expect_perfect = false;
   private bool expect_good = false;
@@ -35,7 +36,14 @@ public class drum : MonoBehaviour
 
   private void Update()
   {
-    if (command.Length == 4) { Debug.Log(command); command = ""; }
+    if (command.Length > 4) { command = ""; }
+    if (command.Length == 4)
+    { 
+      Debug.Log(command); 
+      if (command == "FFFA") { forward.Invoke(); }
+
+      command = ""; 
+    }
 
     if (expect_perfect)
     {
@@ -55,6 +63,7 @@ public class drum : MonoBehaviour
       if (bad_window >= 0) { expect_pata('b'); expect_pon('b'); return; }
       else { bad_window = 0.6f; expect_bad = false; }
     }
+
   }
 
   public void expect_drum()
@@ -67,10 +76,10 @@ public class drum : MonoBehaviour
   { 
     if (Input.GetKeyDown(KeyCode.F) == true) 
     { 
-      trigger.Invoke();
+      beat.Invoke();
       if (c == 'p') { audio_source.PlayOneShot(perfect_pata_sound); command += 'F'; }
       if (c == 'g') { audio_source.PlayOneShot(good_pata_sound); command += 'f'; }
-      if (c == 'b') { audio_source.PlayOneShot(bad_pata_sound); }
+      if (c == 'b') { audio_source.PlayOneShot(bad_pata_sound); command += 'x'; }
     } 
   }
 
@@ -78,10 +87,10 @@ public class drum : MonoBehaviour
   { 
     if (Input.GetKeyDown(KeyCode.A) == true) 
     { 
-      trigger.Invoke();
+      beat.Invoke();
       if (c == 'p') { audio_source.PlayOneShot(perfect_pon_sound); command += 'A'; }
       if (c == 'g') { audio_source.PlayOneShot(good_pon_sound); command += 'a'; }
-      if (c == 'b') { audio_source.PlayOneShot(bad_pon_sound); }
+      if (c == 'b') { audio_source.PlayOneShot(bad_pon_sound); command += 'x';}
     } 
   }
 }
