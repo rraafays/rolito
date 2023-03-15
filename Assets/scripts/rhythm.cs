@@ -33,7 +33,9 @@ public class Interval
 {
   [SerializeField] private float steps;
   [SerializeField] private UnityEvent trigger;
+  [SerializeField] private AudioSource audio_source;
   private int last_interval;
+  public AudioClip pata;
 
   public float get_beat_length(float bpm) { return 60f / (bpm * steps); }
 
@@ -43,6 +45,11 @@ public class Interval
     { 
       last_interval = Mathf.FloorToInt(interval); 
       trigger.Invoke();
+      if (Input.GetKey(KeyCode.Space) == true) 
+      { 
+        Debug.Log("space"); 
+        audio_source.PlayOneShot(pata);
+      }
     }
   }
 }

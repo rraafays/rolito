@@ -4,16 +4,10 @@ using UnityEngine;
 
 public class limit : MonoBehaviour
 {
-  void Start()
-  {
-  }
-
-  void Update() 
-  { 
-  }
+  public string message;
 
   void OnTriggerStay2D() 
   { 
-    if (Input.GetKey(KeyCode.Space) == true) { Debug.Log("SPACEMAN"); }
+    if (Input.GetKey(KeyCode.Space) == true) { Debug.Log(message); }
   }
 }
