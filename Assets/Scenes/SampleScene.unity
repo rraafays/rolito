@@ -360,7 +360,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 1752606832}
           m_TargetAssemblyTypeName: drum, Assembly-CSharp
-          m_MethodName: expect_pata
+          m_MethodName: expect_drum
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -948,9 +948,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audio_source: {fileID: 1752606834}
-  perfect_pata: {fileID: 8300000, guid: 3d846fbfede13413185830db69f648fa, type: 3}
-  good_pata: {fileID: 0}
-  bad_pata: {fileID: 0}
+  perfect_pata_sound: {fileID: 8300000, guid: 3d846fbfede13413185830db69f648fa, type: 3}
+  good_pata_sound: {fileID: 8300000, guid: 57699255f4b53443ab2f68ebb026cfb8, type: 3}
+  bad_pata_sound: {fileID: 8300000, guid: 171e864dfc89e45d0a74de2cdc81c26c, type: 3}
 --- !u!4 &1752606833
 Transform:
   m_ObjectHideFlags: 0
