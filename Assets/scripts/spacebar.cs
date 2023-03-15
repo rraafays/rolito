@@ -7,13 +7,12 @@ public class spacebar : MonoBehaviour
   [SerializeField] bool use_test_beat;
   [SerializeField] float beat_size = 1.15f;
   [SerializeField] float return_speed = 5f;
-  public Rigidbody2D body;
   private Vector3 start_size;
-  private float perfect;
+  private float start_y;
 
   void Start()
   {
-    perfect = transform.localScale.y;
+    start_y = transform.localScale.y;
     start_size = transform.localScale;
     if (use_test_beat) { StartCoroutine(test_beat()); }
   }
@@ -21,10 +20,6 @@ public class spacebar : MonoBehaviour
   void Update() 
   { 
     transform.localScale = Vector3.Lerp(transform.localScale, start_size, Time.deltaTime * return_speed); 
-    if (Input.GetKeyDown(KeyCode.Space) == true)
-    {
-      body.velocity = Vector2.up * 3;
-    }
   }
 
   public void beat() 
