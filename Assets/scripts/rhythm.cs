@@ -8,6 +8,15 @@ public class rhythm : MonoBehaviour
   [SerializeField] private float bpm;
   [SerializeField] private AudioSource audio_source;
   [SerializeField] private Interval[] intervals;
+  public AudioClip horn;
+  public AudioClip beat;
+
+  private void Start()
+  {
+    audio_source.PlayOneShot(horn);
+    audio_source.clip = beat;
+    audio_source.PlayDelayed(horn.length);
+  }
 
   private void Update()
   {
