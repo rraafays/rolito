@@ -475,6 +475,7 @@ GameObject:
   - component: {fileID: 589697380}
   - component: {fileID: 589697381}
   - component: {fileID: 589697382}
+  - component: {fileID: 589697383}
   m_Layer: 0
   m_Name: flag_unit
   m_TagString: Untagged
@@ -624,7 +625,110 @@ MonoBehaviour:
   use_test_beat: 0
   beat_size: 1.15
   return_speed: 5
+  forward1: {fileID: 8300000, guid: 17c2bfe59cdd54c7a98bc5bb53d1efc8, type: 3}
+  forward2: {fileID: 8300000, guid: 5e23c016892af4291915a83b931d328b, type: 3}
+  forward3: {fileID: 8300000, guid: a4ce30ed2fbab40b7a43f09d2f79de0a, type: 3}
+  attack1: {fileID: 8300000, guid: 8b97b1b28f0204d75bb6f2d35073977d, type: 3}
+  attack2: {fileID: 8300000, guid: b91f899fd0f954a1897e3cf3a525f090, type: 3}
+  attack3: {fileID: 8300000, guid: 0b1eb4c6c022f4149b7a21c909b5a1e4, type: 3}
+  audio_source: {fileID: 589697383}
   body: {fileID: 589697380}
+--- !u!82 &589697383
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 589697376}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1222230079
 GameObject:
   m_ObjectHideFlags: 0
@@ -951,21 +1055,60 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  forward:
+  perfect_forward:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 589697382}
+        m_TargetAssemblyTypeName: flag_unit, Assembly-CSharp
+        m_MethodName: perfect_forward
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  good_forward:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 589697382}
+        m_TargetAssemblyTypeName: flag_unit, Assembly-CSharp
+        m_MethodName: good_forward
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  bad_forward:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 589697382}
+        m_TargetAssemblyTypeName: flag_unit, Assembly-CSharp
+        m_MethodName: bad_forward
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  perfect_attack:
+    m_PersistentCalls:
+      m_Calls: []
+  good_attack:
+    m_PersistentCalls:
+      m_Calls: []
+  bad_attack:
+    m_PersistentCalls:
+      m_Calls: []
   perfect_pata_sound: {fileID: 8300000, guid: 3d846fbfede13413185830db69f648fa, type: 3}
   good_pata_sound: {fileID: 8300000, guid: 57699255f4b53443ab2f68ebb026cfb8, type: 3}
   bad_pata_sound: {fileID: 8300000, guid: 171e864dfc89e45d0a74de2cdc81c26c, type: 3}

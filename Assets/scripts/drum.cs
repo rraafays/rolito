@@ -7,7 +7,12 @@ public class drum : MonoBehaviour
 {
   [SerializeField] private AudioSource audio_source;
   [SerializeField] private UnityEvent beat;
-  [SerializeField] private UnityEvent forward;
+  [SerializeField] private UnityEvent perfect_forward;
+  [SerializeField] private UnityEvent good_forward;
+  [SerializeField] private UnityEvent bad_forward;
+  [SerializeField] private UnityEvent perfect_attack;
+  [SerializeField] private UnityEvent good_attack;
+  [SerializeField] private UnityEvent bad_attack;
 
   private bool expect_perfect = false;
   private bool expect_good = false;
@@ -40,7 +45,12 @@ public class drum : MonoBehaviour
     if (command.Length == 4)
     { 
       Debug.Log(command); 
-      if (command == "FFFA") { forward.Invoke(); }
+      if (command.ToLower()[0] == 'f' && command.ToLower()[3] == 'a' ) 
+      { 
+        if (command.Contains('f') || command.Contains('a')) { good_forward.Invoke(); }
+        if (command.Contains('x')) { bad_forward.Invoke(); }
+        if (command == "FFFA" ) { perfect_forward.Invoke(); }
+      }
 
       command = ""; 
     }
