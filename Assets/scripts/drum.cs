@@ -9,13 +9,20 @@ public class drum : MonoBehaviour
   private bool expect_perfect = false;
   private bool expect_good = false;
   private bool expect_bad = false;
+
   private float perfect_window = 0.1f;
   private float good_window = 0.3f;
   private float bad_window = 0.6f;
+
   private bool perfect_pata;
   public AudioClip perfect_pata_sound;
   public AudioClip good_pata_sound;
   public AudioClip bad_pata_sound;
+
+  private bool perfect_pon;
+  public AudioClip perfect_pon_sound;
+  public AudioClip good_pon_sound;
+  public AudioClip bad_pon_sound;
 
   private void Start()
   {
@@ -26,19 +33,19 @@ public class drum : MonoBehaviour
     if (expect_perfect)
     {
       perfect_window -= Time.smoothDeltaTime;
-      if (perfect_window >= 0) { expect_pata('p'); return; }
+      if (perfect_window >= 0) { expect_pata('p'); expect_pon('p'); return; }
       else { perfect_window = 0.1f; expect_perfect = false; expect_good = true; }
     }
     if (expect_good)
     {
       good_window -= Time.smoothDeltaTime;
-      if (good_window >= 0) { expect_pata('g'); return; }
+      if (good_window >= 0) { expect_pata('g'); expect_pon('g'); return; }
       else { good_window = 0.3f; expect_good = false; expect_bad = true; }
     }
     if (expect_bad)
     {
       bad_window -= Time.smoothDeltaTime;
-      if (bad_window >= 0) { expect_pata('b'); return; }
+      if (bad_window >= 0) { expect_pata('b'); expect_pon('b'); return; }
       else { bad_window = 0.6f; expect_bad = false; }
     }
   }
@@ -56,6 +63,16 @@ public class drum : MonoBehaviour
       if (c == 'p') { audio_source.PlayOneShot(perfect_pata_sound); }
       if (c == 'g') { audio_source.PlayOneShot(good_pata_sound); }
       if (c == 'b') { audio_source.PlayOneShot(bad_pata_sound); }
+    } 
+  }
+
+  void expect_pon(char c) 
+  { 
+    if (Input.GetKeyDown(KeyCode.A) == true) 
+    { 
+      if (c == 'p') { audio_source.PlayOneShot(perfect_pon_sound); }
+      if (c == 'g') { audio_source.PlayOneShot(good_pon_sound); }
+      if (c == 'b') { audio_source.PlayOneShot(bad_pon_sound); }
     } 
   }
 }

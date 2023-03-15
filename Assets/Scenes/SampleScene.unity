@@ -951,6 +951,9 @@ MonoBehaviour:
   perfect_pata_sound: {fileID: 8300000, guid: 3d846fbfede13413185830db69f648fa, type: 3}
   good_pata_sound: {fileID: 8300000, guid: 57699255f4b53443ab2f68ebb026cfb8, type: 3}
   bad_pata_sound: {fileID: 8300000, guid: 171e864dfc89e45d0a74de2cdc81c26c, type: 3}
+  perfect_pon_sound: {fileID: 8300000, guid: 797a5d50b7bb640e8bc35f788e2c3dc8, type: 3}
+  good_pon_sound: {fileID: 8300000, guid: 6734afb45f90d4826a7a640eeace6b25, type: 3}
+  bad_pon_sound: {fileID: 8300000, guid: e2f2037b6432e4901a4bb7ee10ccfcf6, type: 3}
 --- !u!4 &1752606833
 Transform:
   m_ObjectHideFlags: 0
