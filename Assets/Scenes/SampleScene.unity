@@ -340,7 +340,7 @@ MonoBehaviour:
     trigger:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1466611786}
+        - m_Target: {fileID: 589697382}
           m_TargetAssemblyTypeName: flag_unit, Assembly-CSharp
           m_MethodName: beat
           m_Mode: 1
@@ -464,6 +464,7 @@ GameObject:
   - component: {fileID: 589697377}
   - component: {fileID: 589697380}
   - component: {fileID: 589697381}
+  - component: {fileID: 589697382}
   m_Layer: 0
   m_Name: flag_unit
   m_TagString: Untagged
@@ -533,7 +534,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 1936775532, guid: 5ceadf872451947daa1eab2d24c610ff, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.7403042, g: 0.47459057, b: 0.745283, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -598,6 +599,22 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.58
+--- !u!114 &589697382
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 589697376}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4cd0d4e6765f4f5aad5cb230dee51fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  use_test_beat: 0
+  beat_size: 1.15
+  return_speed: 5
+  body: {fileID: 589697380}
 --- !u!1 &1222230079
 GameObject:
   m_ObjectHideFlags: 0
@@ -719,7 +736,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1466611784}
   - component: {fileID: 1466611785}
-  - component: {fileID: 1466611786}
   m_Layer: 0
   m_Name: pupil
   m_TagString: Untagged
@@ -784,7 +800,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -1031743364, guid: 5ceadf872451947daa1eab2d24c610ff, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.7411765, g: 0.47843137, b: 0.7490196, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -794,21 +810,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1466611786
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1466611783}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e4cd0d4e6765f4f5aad5cb230dee51fd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  use_test_beat: 0
-  pulse_size: 1.15
-  return_speed: 5
 --- !u!1 &1517446298
 GameObject:
   m_ObjectHideFlags: 0
@@ -884,7 +885,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 1277924730, guid: 5ceadf872451947daa1eab2d24c610ff, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.7411765, g: 0.47843137, b: 0.7490196, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -968,7 +969,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 1318243933, guid: 5ceadf872451947daa1eab2d24c610ff, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.7411765, g: 0.47843137, b: 0.7490196, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
