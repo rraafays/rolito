@@ -6,6 +6,8 @@ using UnityEngine.Events;
 public class drum : MonoBehaviour
 {
   [SerializeField] private AudioSource audio_source;
+  [SerializeField] private UnityEvent trigger;
+
   private bool expect_perfect = false;
   private bool expect_good = false;
   private bool expect_bad = false;
@@ -15,11 +17,12 @@ public class drum : MonoBehaviour
   private float bad_window = 0.6f;
 
   private bool perfect_pata;
+  private bool good_pata;
+  private bool bad_pata;
   public AudioClip perfect_pata_sound;
   public AudioClip good_pata_sound;
   public AudioClip bad_pata_sound;
 
-  private bool perfect_pon;
   public AudioClip perfect_pon_sound;
   public AudioClip good_pon_sound;
   public AudioClip bad_pon_sound;
@@ -60,6 +63,7 @@ public class drum : MonoBehaviour
   { 
     if (Input.GetKeyDown(KeyCode.F) == true) 
     { 
+      trigger.Invoke();
       if (c == 'p') { audio_source.PlayOneShot(perfect_pata_sound); }
       if (c == 'g') { audio_source.PlayOneShot(good_pata_sound); }
       if (c == 'b') { audio_source.PlayOneShot(bad_pata_sound); }
@@ -70,6 +74,7 @@ public class drum : MonoBehaviour
   { 
     if (Input.GetKeyDown(KeyCode.A) == true) 
     { 
+      trigger.Invoke();
       if (c == 'p') { audio_source.PlayOneShot(perfect_pon_sound); }
       if (c == 'g') { audio_source.PlayOneShot(good_pon_sound); }
       if (c == 'b') { audio_source.PlayOneShot(bad_pon_sound); }
