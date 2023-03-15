@@ -22,6 +22,8 @@ public class spacebar : MonoBehaviour
     transform.localScale = Vector3.Lerp(transform.localScale, start_size, Time.deltaTime * return_speed); 
   }
 
+  void OnTriggerEnter2D() { Debug.Log("egg"); }
+
   public void beat() 
   { 
     transform.localScale = new Vector3(0, 1, 0) * beat_size; 
