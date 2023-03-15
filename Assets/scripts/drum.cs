@@ -27,12 +27,16 @@ public class drum : MonoBehaviour
   public AudioClip good_pon_sound;
   public AudioClip bad_pon_sound;
 
+  private string command = "";
+
   private void Start()
   {
   }
 
   private void Update()
   {
+    if (command.Length == 4) { Debug.Log(command); command = ""; }
+
     if (expect_perfect)
     {
       perfect_window -= Time.smoothDeltaTime;
@@ -64,8 +68,8 @@ public class drum : MonoBehaviour
     if (Input.GetKeyDown(KeyCode.F) == true) 
     { 
       trigger.Invoke();
-      if (c == 'p') { audio_source.PlayOneShot(perfect_pata_sound); }
-      if (c == 'g') { audio_source.PlayOneShot(good_pata_sound); }
+      if (c == 'p') { audio_source.PlayOneShot(perfect_pata_sound); command += 'F'; }
+      if (c == 'g') { audio_source.PlayOneShot(good_pata_sound); command += 'f'; }
       if (c == 'b') { audio_source.PlayOneShot(bad_pata_sound); }
     } 
   }
@@ -75,8 +79,8 @@ public class drum : MonoBehaviour
     if (Input.GetKeyDown(KeyCode.A) == true) 
     { 
       trigger.Invoke();
-      if (c == 'p') { audio_source.PlayOneShot(perfect_pon_sound); }
-      if (c == 'g') { audio_source.PlayOneShot(good_pon_sound); }
+      if (c == 'p') { audio_source.PlayOneShot(perfect_pon_sound); command += 'A'; }
+      if (c == 'g') { audio_source.PlayOneShot(good_pon_sound); command += 'a'; }
       if (c == 'b') { audio_source.PlayOneShot(bad_pon_sound); }
     } 
   }
