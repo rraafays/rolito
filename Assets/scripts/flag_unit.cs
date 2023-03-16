@@ -7,13 +7,15 @@ public class flag_unit : MonoBehaviour
   [SerializeField] bool use_test_beat;
   [SerializeField] float beat_size = 1.15f;
   [SerializeField] float return_speed = 5f;
+
+  [SerializeField] private AudioSource audio_source;
   public AudioClip forward1;
   public AudioClip forward2;
   public AudioClip forward3;
   public AudioClip attack1;
   public AudioClip attack2;
   public AudioClip attack3;
-  [SerializeField] private AudioSource audio_source;
+
   public Rigidbody2D body;
   private Vector3 start_size;
 

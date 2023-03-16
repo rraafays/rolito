@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6844732088248092198}
   - component: {fileID: 900556876055013349}
   - component: {fileID: 72835735}
+  - component: {fileID: 848147895}
   m_Layer: 0
   m_Name: pata
   m_TagString: Untagged
@@ -98,3 +99,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   self: {fileID: 7780849123087000675}
+  body: {fileID: 848147895}
+  beat_size: 1.5
+  return_speed: 10
+--- !u!50 &848147895
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7780849123087000675}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
