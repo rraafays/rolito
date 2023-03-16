@@ -1115,6 +1115,11 @@ MonoBehaviour:
   perfect_pon_sound: {fileID: 8300000, guid: 797a5d50b7bb640e8bc35f788e2c3dc8, type: 3}
   good_pon_sound: {fileID: 8300000, guid: 6734afb45f90d4826a7a640eeace6b25, type: 3}
   bad_pon_sound: {fileID: 8300000, guid: e2f2037b6432e4901a4bb7ee10ccfcf6, type: 3}
+  pata: {fileID: 7780849123087000675, guid: 1c4c4cd34381b44efba2bae486f31ef6, type: 3}
+  pon: {fileID: 4807486308876554761, guid: 1cdcba3d52c2a4f69aa6392c2054896f, type: 3}
+  right_area: {x: 10, y: 5, z: 0}
+  left_area: {x: -10, y: 5, z: 0}
+  size: {x: 10, y: 5, z: 0}
 --- !u!4 &1752606833
 Transform:
   m_ObjectHideFlags: 0

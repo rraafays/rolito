@@ -33,6 +33,12 @@ public class drum : MonoBehaviour
   public AudioClip good_pon_sound;
   public AudioClip bad_pon_sound;
 
+  public GameObject pata;
+  public GameObject pon;
+  public Vector3 right_area;
+  public Vector3 left_area;
+  public Vector3 size;
+
   private string command = "";
 
   private void Start()
@@ -75,15 +81,13 @@ public class drum : MonoBehaviour
     }
   }
 
-  public void reset_drum()
-  {
-    command = "";
-  }
+  public void reset_drum() { command = ""; }
 
   public void expect_drum()
   {
     expect_perfect = true;
     expect_pata('p');
+    expect_pata('a');
   }
 
   void expect_pata(char c) 
@@ -91,10 +95,11 @@ public class drum : MonoBehaviour
     if (Input.GetKeyDown(KeyCode.F) == true) 
     { 
       beat.Invoke();
+      spawn_drum_beat(right_area, pata);
       if (c == 'p') { audio_source.PlayOneShot(perfect_pata_sound); command += 'F'; }
       if (c == 'g') { audio_source.PlayOneShot(good_pata_sound); command += 'f'; }
       if (c == 'b') { audio_source.PlayOneShot(bad_pata_sound); command += 'x'; }
-    } 
+    }
   }
 
   void expect_pon(char c) 
@@ -102,9 +107,16 @@ public class drum : MonoBehaviour
     if (Input.GetKeyDown(KeyCode.A) == true) 
     { 
       beat.Invoke();
+      spawn_drum_beat(left_area, pon);
       if (c == 'p') { audio_source.PlayOneShot(perfect_pon_sound); command += 'A'; }
       if (c == 'g') { audio_source.PlayOneShot(good_pon_sound); command += 'a'; }
       if (c == 'b') { audio_source.PlayOneShot(bad_pon_sound); command += 'x';}
     } 
+  }
+
+  private void spawn_drum_beat(Vector3 area, GameObject drum_beat)
+  {
+    Vector3 position = area + new Vector3(Random.Range(-size.x / 2, size.x /2), Random.Range(-size.y / 2, size.y / 2), 0);
+    Instantiate(drum_beat, position, Quaternion.identity);
   }
 }
