@@ -360,6 +360,24 @@ MonoBehaviour:
           m_CallState: 2
     audio_source: {fileID: 416168924}
     pata: {fileID: 8300000, guid: 3d846fbfede13413185830db69f648fa, type: 3}
+  - steps: 0.2
+    trigger:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1752606832}
+          m_TargetAssemblyTypeName: drum, Assembly-CSharp
+          m_MethodName: reset_drum
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    audio_source: {fileID: 416168924}
+    pata: {fileID: 8300000, guid: 3d846fbfede13413185830db69f648fa, type: 3}
   horn: {fileID: 8300000, guid: 3be03094393fc44a29c5ce08e3e6c01d, type: 3}
   beat: {fileID: 8300000, guid: 2b0cd405eb13741629b1a7f51bdf6527, type: 3}
 --- !u!4 &416168926

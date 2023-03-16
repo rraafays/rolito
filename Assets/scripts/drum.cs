@@ -73,7 +73,11 @@ public class drum : MonoBehaviour
       if (bad_window >= 0) { expect_pata('b'); expect_pon('b'); return; }
       else { bad_window = 0.6f; expect_bad = false; }
     }
+  }
 
+  public void reset_drum()
+  {
+    command = "";
   }
 
   public void expect_drum()
