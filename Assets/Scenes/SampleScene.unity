@@ -219,6 +219,7 @@ GameObject:
   - component: {fileID: 202618727}
   - component: {fileID: 202618729}
   - component: {fileID: 202618728}
+  - component: {fileID: 202618730}
   m_Layer: 0
   m_Name: don
   m_TagString: Untagged
@@ -340,6 +341,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 0.5}
   m_EdgeRadius: 0
+--- !u!114 &202618730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 202618725}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5eeed1cad6a8a43e0acfdca32768890a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  can_be_pressed: 0
+  perfect: 0
 --- !u!1 &227736516
 GameObject:
   m_ObjectHideFlags: 0
@@ -352,6 +367,7 @@ GameObject:
   - component: {fileID: 227736518}
   - component: {fileID: 227736520}
   - component: {fileID: 227736519}
+  - component: {fileID: 227736521}
   m_Layer: 0
   m_Name: pon
   m_TagString: Untagged
@@ -473,6 +489,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 0.5}
   m_EdgeRadius: 0
+--- !u!114 &227736521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 227736516}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5eeed1cad6a8a43e0acfdca32768890a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  can_be_pressed: 0
+  perfect: 0
 --- !u!1 &334286176
 GameObject:
   m_ObjectHideFlags: 0
@@ -488,7 +518,7 @@ GameObject:
   - component: {fileID: 334286180}
   m_Layer: 0
   m_Name: Square
-  m_TagString: Untagged
+  m_TagString: beat
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -605,7 +635,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -619,7 +649,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 0.5}
+  m_Size: {x: 0.5, y: 0.5}
   m_EdgeRadius: 0
 --- !u!1 &395722040
 GameObject:
@@ -633,6 +663,7 @@ GameObject:
   - component: {fileID: 395722042}
   - component: {fileID: 395722044}
   - component: {fileID: 395722043}
+  - component: {fileID: 395722045}
   m_Layer: 0
   m_Name: chaka
   m_TagString: Untagged
@@ -754,6 +785,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 0.5}
   m_EdgeRadius: 0
+--- !u!114 &395722045
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 395722040}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5eeed1cad6a8a43e0acfdca32768890a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  can_be_pressed: 0
+  perfect: 0
 --- !u!1 &416168923
 GameObject:
   m_ObjectHideFlags: 0
@@ -1125,6 +1170,7 @@ GameObject:
   - component: {fileID: 651722377}
   - component: {fileID: 651722379}
   - component: {fileID: 651722378}
+  - component: {fileID: 651722380}
   m_Layer: 0
   m_Name: pata
   m_TagString: Untagged
@@ -1246,6 +1292,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 0.5}
   m_EdgeRadius: 0
+--- !u!114 &651722380
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 651722375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5eeed1cad6a8a43e0acfdca32768890a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  can_be_pressed: 0
+  perfect: 0
 --- !u!1 &1222230079
 GameObject:
   m_ObjectHideFlags: 0
@@ -1588,8 +1648,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 506fd9c38888640eb83bff5f2694e9b3, type: 3}
   speed: {x: 0.1, y: 0, z: 0}
   speaker: {fileID: 1632191767}
-  can_be_pressed: 0
-  test: 0
+  command: 
 --- !u!82 &1632191767
 AudioSource:
   m_ObjectHideFlags: 0

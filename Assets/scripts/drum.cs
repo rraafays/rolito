@@ -34,8 +34,20 @@ public class drum : MonoBehaviour {
     if (is_hit(chaka)) { chant(chaka); }
     
     if (is_perfect(drums[(int)pata.name])) {
-      chant(don);
+      command += 'F';
       drums[(int)pata.name].GetComponent<button>().perfect = false;
+    }
+    if (is_perfect(drums[(int)pon.name])) {
+      command += 'A';
+      drums[(int)pon.name].GetComponent<button>().perfect = false;
+    }
+    if (is_perfect(drums[(int)don.name])) {
+      command += 'S';
+      drums[(int)don.name].GetComponent<button>().perfect = false;
+    }
+    if (is_perfect(drums[(int)chaka.name])) {
+      command += 'D';
+      drums[(int)chaka.name].GetComponent<button>().perfect = false;
     }
   }
 
