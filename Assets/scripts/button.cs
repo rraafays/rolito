@@ -29,7 +29,7 @@ public class button : MonoBehaviour
   }
 
   private bool pressed_on_time(KeyCode key) {
-    if (Input.GetKeyDown(key) && can_be_pressed) { return true; }
+    if (Input.GetKey(key) && can_be_pressed) { return true; }
     else { return false; }
   }
 }

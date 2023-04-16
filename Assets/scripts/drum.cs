@@ -9,28 +9,53 @@ public class drum : MonoBehaviour {
   public AudioSource speaker;
   public string command;
 
-  enum Drums {
+  private enum Sound {
     Pata,
     Pon,
     Don,
     Chaka
   }
 
+  private struct Drum {
+    public Sound sound;
+    public KeyCode bind;
+
+    public Drum(Sound sound, KeyCode bind) {
+      this.sound = sound;
+      this.bind = bind;
+    }
+  }
+
+  Drum pata = new Drum(Sound.Pata, KeyCode.F);
+  Drum pon = new Drum(Sound.Pon, KeyCode.A);
+  Drum don = new Drum(Sound.Don, KeyCode.S);
+  Drum chaka = new Drum(Sound.Chaka, KeyCode.D);
+
   void Start() {
   }
 
   void Update() {
-    if (Input.GetKeyDown(KeyCode.F)) { play_drum(Drums.Pata); }
-    if (Input.GetKeyDown(KeyCode.A)) { play_drum(Drums.Pon); }
-    if (Input.GetKeyDown(KeyCode.S)) { play_drum(Drums.Don); }
-    if (Input.GetKeyDown(KeyCode.D)) { play_drum(Drums.Chaka); }
+    if (is_hit(pata)) { chant(pata); }
+    if (is_hit(pon)) { chant(pon); }
+    if (is_hit(don)) { chant(don); }
+    if (is_hit(chaka)) { chant(chaka); }
     
     if (drums[0].GetComponent<button>().perfect) {
-      play_drum(Drums.Don);
+      chant(don);
+      drums[0].GetComponent<button>().perfect = false;
     }
   }
 
-  void play_drum(Drums sound) {
-    speaker.PlayOneShot(sounds[(int)sound]);
+  void chant(Drum drum) {
+    speaker.PlayOneShot(sounds[(int)drum.sound]);
+  }
+
+  void reset_perfect(GameObject drum) {
+    drum.GetComponent<button>().perfect = false;
+  }
+
+  bool is_hit(Drum drum) {
+    if (Input.GetKeyDown(drum.bind)) { return true; }
+    else { return false; }
   }
 }
