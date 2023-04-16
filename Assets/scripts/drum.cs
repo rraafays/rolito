@@ -9,7 +9,13 @@ public class drum : MonoBehaviour {
   public AudioSource speaker;
   public string command;
 
-  private enum Name { Pata, Pon, Don, Chaka }
+  private enum Name { 
+    Pata, 
+    Pon, 
+    Don, 
+    Chaka 
+  }
+
   private struct Drum {
     public Name name;
     public KeyCode bind;
@@ -33,20 +39,16 @@ public class drum : MonoBehaviour {
     if (is_hit(don)) { chant(don); }
     if (is_hit(chaka)) { chant(chaka); }
     
-    if (is_perfect(drums[(int)pata.name])) {
-      command += 'F';
+    if (is_perfect(drums[(int)pata.name])) { command += 'F';
       drums[(int)pata.name].GetComponent<button>().perfect = false;
     }
-    if (is_perfect(drums[(int)pon.name])) {
-      command += 'A';
+    if (is_perfect(drums[(int)pon.name])) { command += 'A';
       drums[(int)pon.name].GetComponent<button>().perfect = false;
     }
-    if (is_perfect(drums[(int)don.name])) {
-      command += 'S';
+    if (is_perfect(drums[(int)don.name])) { command += 'S';
       drums[(int)don.name].GetComponent<button>().perfect = false;
     }
-    if (is_perfect(drums[(int)chaka.name])) {
-      command += 'D';
+    if (is_perfect(drums[(int)chaka.name])) { command += 'D';
       drums[(int)chaka.name].GetComponent<button>().perfect = false;
     }
   }
