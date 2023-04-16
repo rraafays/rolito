@@ -221,7 +221,7 @@ GameObject:
   - component: {fileID: 202618728}
   m_Layer: 0
   m_Name: don
-  m_TagString: activator
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -354,7 +354,7 @@ GameObject:
   - component: {fileID: 227736519}
   m_Layer: 0
   m_Name: pon
-  m_TagString: activator
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -574,7 +574,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tempo: 120
   started: 0
-  can_be_pressed: 0
 --- !u!50 &334286180
 Rigidbody2D:
   serializedVersion: 4
@@ -636,7 +635,7 @@ GameObject:
   - component: {fileID: 395722043}
   m_Layer: 0
   m_Name: chaka
-  m_TagString: activator
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1128,7 +1127,7 @@ GameObject:
   - component: {fileID: 651722378}
   m_Layer: 0
   m_Name: pata
-  m_TagString: activator
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1589,6 +1588,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 506fd9c38888640eb83bff5f2694e9b3, type: 3}
   speed: {x: 0.1, y: 0, z: 0}
   speaker: {fileID: 1632191767}
+  can_be_pressed: 0
+  test: 0
 --- !u!82 &1632191767
 AudioSource:
   m_ObjectHideFlags: 0

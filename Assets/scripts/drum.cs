@@ -20,13 +20,13 @@ public class drum : MonoBehaviour {
 
   void Update() {
     for (int x = 0; x < drums.Length; x++) {
-    //   if (x == (int)Drums.Pata) { speaker.PlayOneShot(sound); } 
     }
 
     if (Input.GetKeyDown(KeyCode.F)) { play_drum((int)Drums.Pata); }
     if (Input.GetKeyDown(KeyCode.A)) { play_drum((int)Drums.Pon); }
     if (Input.GetKeyDown(KeyCode.S)) { play_drum((int)Drums.Don); }
     if (Input.GetKeyDown(KeyCode.D)) { play_drum((int)Drums.Chaka); }
+
   }
 
   void play_drum(int sound) {
