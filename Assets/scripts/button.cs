@@ -6,27 +6,6 @@ public class button : MonoBehaviour
 {
   public KeyCode bind;
   private bool can_be_pressed;
-
-  enum Grade {
-    Missed,
-    Bad, 
-    Good, 
-    Perfect
-  }
-
-  struct Window {
-    bool open;
-    bool hit;
-    Grade grade;
-
-    public Window(bool open, bool hit, Grade grade) {
-      this.open = open;
-      this.hit = hit;
-      this.grade = grade;
-    }
-  }
-
-  public bool perfect_window;
   public bool perfect;
   
   void Start() {
