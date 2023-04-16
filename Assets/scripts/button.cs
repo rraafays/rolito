@@ -5,14 +5,14 @@ using UnityEngine;
 public class button : MonoBehaviour
 {
   public bool can_be_pressed;
-  public bool test;
+  public bool perfect;
   
   void Start() {
   }
 
   void Update() {
     if (pressed_on_time(KeyCode.F)) {
-      test = true;
+      perfect = true;
     }
   }
 

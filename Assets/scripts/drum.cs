@@ -7,6 +7,7 @@ public class drum : MonoBehaviour {
   public AudioClip[] sounds; 
   public Vector3 speed;
   public AudioSource speaker;
+  public string command;
 
   enum Drums {
     Pata,
@@ -19,17 +20,17 @@ public class drum : MonoBehaviour {
   }
 
   void Update() {
-    for (int x = 0; x < drums.Length; x++) {
+    if (Input.GetKeyDown(KeyCode.F)) { play_drum(Drums.Pata); }
+    if (Input.GetKeyDown(KeyCode.A)) { play_drum(Drums.Pon); }
+    if (Input.GetKeyDown(KeyCode.S)) { play_drum(Drums.Don); }
+    if (Input.GetKeyDown(KeyCode.D)) { play_drum(Drums.Chaka); }
+    
+    if (drums[0].GetComponent<button>().perfect) {
+      play_drum(Drums.Don);
     }
-
-    if (Input.GetKeyDown(KeyCode.F)) { play_drum((int)Drums.Pata); }
-    if (Input.GetKeyDown(KeyCode.A)) { play_drum((int)Drums.Pon); }
-    if (Input.GetKeyDown(KeyCode.S)) { play_drum((int)Drums.Don); }
-    if (Input.GetKeyDown(KeyCode.D)) { play_drum((int)Drums.Chaka); }
-
   }
 
-  void play_drum(int sound) {
-    speaker.PlayOneShot(sounds[sound]);
+  void play_drum(Drums sound) {
+    speaker.PlayOneShot(sounds[(int)sound]);
   }
 }
