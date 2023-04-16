@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class drum : MonoBehaviour {
   public GameObject[] drums;
+  public AudioClip[] sounds; 
   public Vector3 speed;
   public AudioSource speaker;
-  public AudioClip[] sounds; 
 
   enum Drums {
     Pata,
