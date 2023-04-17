@@ -5,7 +5,7 @@ using UnityEngine;
 public class beat : MonoBehaviour
 {
   private float tempo = 120;
-  private float despawn_point = -10;
+  private float despawn_point = -1;
 
   void Start() {
     tempo = tempo / 60;

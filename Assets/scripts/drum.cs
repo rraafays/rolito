@@ -5,6 +5,7 @@ using UnityEngine;
 public class drum : MonoBehaviour {
   public GameObject[] drums;
   public AudioClip[] sounds; 
+  public AudioClip[] voices; 
   public Vector3 speed;
   public AudioSource speaker;
   public string command;
@@ -24,6 +25,12 @@ public class drum : MonoBehaviour {
       this.name = name;
       this.bind = bind;
     }
+  }
+
+  private enum Command {
+    Attack,
+    Defend,
+    March
   }
 
   Drum pata = new Drum(Name.Pata, KeyCode.F);
@@ -51,6 +58,8 @@ public class drum : MonoBehaviour {
     if (is_perfect(drums[(int)chaka.name])) { command += 'D';
       drums[(int)chaka.name].GetComponent<button>().perfect = false;
     }
+
+    execute(command);
   }
 
   void chant(Drum drum) {
@@ -69,5 +78,12 @@ public class drum : MonoBehaviour {
   bool is_perfect(GameObject game_object) {
     if (game_object.GetComponent<button>().perfect) {return true;}
     else { return false; }
+  }
+
+  void execute(string command) {
+    if (command.Length > 0 && command.Length % 4 == 0) {
+      speaker.PlayOneShot(voices[(int)Command.March]);
+      this.command = "";
+    }
   }
 }
