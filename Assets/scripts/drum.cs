@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class drum : MonoBehaviour {
   public GameObject[] drums;
-  public AudioClip[] sounds; 
-  public AudioClip[] voices; 
+  public AudioClip[] sounds, voices; 
   public Vector3 speed;
   public AudioSource speaker;
   public string command;
@@ -15,6 +14,18 @@ public class drum : MonoBehaviour {
     Pon, 
     Don, 
     Chaka 
+  }
+
+  private enum Command { 
+    Attack, 
+    Defend, 
+    March 
+  }
+
+  private enum Quality {
+    Perfect,
+    Good,
+    Bad
   }
 
   private struct Drum {
@@ -27,11 +38,6 @@ public class drum : MonoBehaviour {
     }
   }
 
-  private enum Command {
-    Attack,
-    Defend,
-    March
-  }
 
   Drum pata = new Drum(Name.Pata, KeyCode.F);
   Drum pon = new Drum(Name.Pon, KeyCode.A);
@@ -46,18 +52,10 @@ public class drum : MonoBehaviour {
     if (is_hit(don)) { chant(don); }
     if (is_hit(chaka)) { chant(chaka); }
     
-    if (is_perfect(drums[(int)pata.name])) { command += 'F';
-      drums[(int)pata.name].GetComponent<button>().perfect = false;
-    }
-    if (is_perfect(drums[(int)pon.name])) { command += 'A';
-      drums[(int)pon.name].GetComponent<button>().perfect = false;
-    }
-    if (is_perfect(drums[(int)don.name])) { command += 'S';
-      drums[(int)don.name].GetComponent<button>().perfect = false;
-    }
-    if (is_perfect(drums[(int)chaka.name])) { command += 'D';
-      drums[(int)chaka.name].GetComponent<button>().perfect = false;
-    }
+    if (get_quality(drums[(int)pata.name]) == Quality.Perfect) { command += 'F'; }
+    if (get_quality(drums[(int)pon.name]) == Quality.Perfect) { command += 'A'; }
+    if (get_quality(drums[(int)don.name]) == Quality.Perfect) { command += 'S'; }
+    if (get_quality(drums[(int)chaka.name]) == Quality.Perfect) { command += 'D'; }
 
     execute(command);
   }
@@ -75,9 +73,20 @@ public class drum : MonoBehaviour {
     else { return false; }
   }
 
-  bool is_perfect(GameObject game_object) {
-    if (game_object.GetComponent<button>().perfect) {return true;}
-    else { return false; }
+  Quality get_quality(GameObject game_object) {
+    if (game_object.GetComponent<button>().perfect) {
+      game_object.GetComponent<button>().perfect = false;
+      return Quality.Perfect; 
+    }
+    if (game_object.GetComponent<button>().good) {
+      game_object.GetComponent<button>().good = false;
+      return Quality.Good; 
+    }
+    if (game_object.GetComponent<button>().bad) {
+      game_object.GetComponent<button>().bad = false;
+      return Quality.Bad; 
+    }
+    else { return Quality.Bad; }
   }
 
   void execute(string command) {
