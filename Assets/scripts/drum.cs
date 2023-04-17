@@ -119,6 +119,8 @@ public class drum : MonoBehaviour {
         defend(action.Item1); 
       }
       this.command = "";
+      combo_counter += 1;
+      Debug.Log(combo_counter);
     }
   }
 
