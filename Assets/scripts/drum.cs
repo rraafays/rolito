@@ -8,6 +8,7 @@ public class drum : MonoBehaviour {
   public Vector3 speed;
   public AudioSource speaker;
   public string command;
+  private int combo_counter;
 
   private enum Name { 
     Pata, 
@@ -107,29 +108,51 @@ public class drum : MonoBehaviour {
 
   void execute(string command) {
     if (command.Length > 0 && command.Length % 4 == 0) {
-      if (get_action(command) == Action.March) { march(); }
-      if (get_action(command) == Action.Attack) { attack(); }
-      if (get_action(command) == Action.Defend) { defend(); }
+      (Quality, Action) action = get_action(command);
+      if (action.Item2 == Action.March) { 
+        march(action.Item1); 
+      }
+      if (action.Item2 == Action.Attack) { 
+        attack(action.Item1); 
+      }
+      if (action.Item2 == Action.Defend) { 
+        defend(action.Item1); 
+      }
       this.command = "";
     }
   }
 
-  Action get_action(string command) {
-    if (command.ToLower() == "fffa") { return Action.March; }
-    if (command.ToLower() == "aafa") { return Action.Attack; }
-    if (command.ToLower() == "ddfa") { return Action.Defend; }
-    else { return Action.None; }
+  (Quality, Action) get_action(string command) {
+    if (command == "fffa") { 
+      if (command.Contains('F') && command.Contains('A')) { 
+        return (Quality.Perfect, Action.March);
+      }
+      else { return (Quality.Good, Action.March); }
+    }
+    if (command == "aafa") { 
+      if (command.Contains('F') && command.Contains('A')) { 
+        return (Quality.Perfect, Action.Attack);
+      }
+      else { return (Quality.Good, Action.Attack); }
+    }
+    if (command == "ddfa") { 
+      if (command.Contains('F') && command.Contains('A')) { 
+        return (Quality.Perfect, Action.Defend);
+      }
+      else { return (Quality.Good, Action.Defend); }
+    }
+    else { return (Quality.Perfect, Action.None); }
   } 
 
-  void march() {
+  void march(Quality quality) {
     speaker.clip = voices[(int)Action.March];
     speaker.PlayDelayed(0.5f);
   }
-  void attack() {
+  void attack(Quality quality) {
     speaker.clip = voices[(int)Action.Attack];
     speaker.PlayDelayed(0.5f);
   }
-  void defend() {
+  void defend(Quality quality) {
     speaker.clip = voices[(int)Action.Defend];
     speaker.PlayDelayed(0.5f);
   }
