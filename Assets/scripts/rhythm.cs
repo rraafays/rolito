@@ -32,5 +32,7 @@ public class rhythm : MonoBehaviour
     }
   }
 
-  void send_beat() { Instantiate(beat, transform.position, transform.rotation); }
+  void send_beat() { 
+    if (beat != null) { Instantiate(beat, transform.position, transform.rotation); }
+  }
 }

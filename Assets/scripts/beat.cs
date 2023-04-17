@@ -5,6 +5,7 @@ using UnityEngine;
 public class beat : MonoBehaviour
 {
   private float tempo = 120;
+  private float despawn_point = -10;
 
   void Start() {
     tempo = tempo / 60;
@@ -12,5 +13,10 @@ public class beat : MonoBehaviour
 
   void Update() {
     transform.position -= new Vector3(0, tempo * Time.deltaTime, 0);
+    if (transform.position.y < despawn_point) {
+      if (gameObject != null) {
+        Destroy(gameObject);
+      }
+    }
   }
 }
