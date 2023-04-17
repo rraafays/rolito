@@ -233,7 +233,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 84684442}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.5, y: 0, z: 0}
+  m_LocalPosition: {x: 6.5, y: 0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -485,7 +485,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1, y: 1.5}
   m_EdgeRadius: 0
 --- !u!114 &202618730
 MonoBehaviour:
@@ -500,7 +500,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bind: 115
+  can_be_pressed: 0
   perfect: 0
+  good: 0
+  bad: 0
 --- !u!1 &227736516
 GameObject:
   m_ObjectHideFlags: 0
@@ -633,7 +636,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1, y: 1.5}
   m_EdgeRadius: 0
 --- !u!114 &227736521
 MonoBehaviour:
@@ -648,7 +651,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bind: 97
+  can_be_pressed: 0
   perfect: 0
+  good: 0
+  bad: 0
 --- !u!1 &395722040
 GameObject:
   m_ObjectHideFlags: 0
@@ -781,7 +787,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1, y: 1.5}
   m_EdgeRadius: 0
 --- !u!114 &395722045
 MonoBehaviour:
@@ -796,7 +802,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bind: 100
+  can_be_pressed: 0
   perfect: 0
+  good: 0
+  bad: 0
 --- !u!1 &416168923
 GameObject:
   m_ObjectHideFlags: 0
@@ -1288,7 +1297,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1, y: 1.5}
   m_EdgeRadius: 0
 --- !u!114 &651722380
 MonoBehaviour:
@@ -1303,7 +1312,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bind: 102
+  can_be_pressed: 0
   perfect: 0
+  good: 0
+  bad: 0
 --- !u!1 &1222230079
 GameObject:
   m_ObjectHideFlags: 0

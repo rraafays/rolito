@@ -5,7 +5,7 @@ using UnityEngine;
 public class button : MonoBehaviour
 {
   public KeyCode bind;
-  private bool can_be_pressed;
+  public bool can_be_pressed;
   public bool perfect;
   public bool good;
   public bool bad;

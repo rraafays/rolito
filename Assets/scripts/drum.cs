@@ -51,9 +51,18 @@ public class drum : MonoBehaviour {
     if (is_hit(pon)) { chant(pon); }
     if (is_hit(don)) { chant(don); }
     if (is_hit(chaka)) { chant(chaka); }
+
+    switch (get_quality(drums[(int)pata.name])) {
+      case Quality.Perfect: command += 'F'; break;
+      case Quality.Good: command += 'f'; break;
+    }
+    switch (get_quality(drums[(int)pon.name])) {
+      case Quality.Perfect: command += 'A'; break;
+      case Quality.Good: command += 'a'; break;
+    }
     
-    if (get_quality(drums[(int)pata.name]) == Quality.Perfect) { command += 'F'; }
-    if (get_quality(drums[(int)pon.name]) == Quality.Perfect) { command += 'A'; }
+    // if (get_quality(drums[(int)pata.name]) == Quality.Perfect) { command += 'F'; }
+    // if (get_quality(drums[(int)pon.name]) == Quality.Perfect) { command += 'A'; }
     if (get_quality(drums[(int)don.name]) == Quality.Perfect) { command += 'S'; }
     if (get_quality(drums[(int)chaka.name]) == Quality.Perfect) { command += 'D'; }
 
@@ -76,14 +85,17 @@ public class drum : MonoBehaviour {
   Quality get_quality(GameObject game_object) {
     if (game_object.GetComponent<button>().perfect) {
       game_object.GetComponent<button>().perfect = false;
+      game_object.GetComponent<button>().can_be_pressed = false;
       return Quality.Perfect; 
     }
     if (game_object.GetComponent<button>().good) {
       game_object.GetComponent<button>().good = false;
+      game_object.GetComponent<button>().can_be_pressed = false;
       return Quality.Good; 
     }
     if (game_object.GetComponent<button>().bad) {
       game_object.GetComponent<button>().bad = false;
+      game_object.GetComponent<button>().can_be_pressed = false;
       return Quality.Bad; 
     }
     else { return Quality.Bad; }
