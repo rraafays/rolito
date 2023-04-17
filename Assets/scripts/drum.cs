@@ -16,10 +16,11 @@ public class drum : MonoBehaviour {
     Chaka 
   }
 
-  private enum Command { 
+  private enum Action { 
     Attack, 
     Defend, 
-    March 
+    March,
+    None
   }
 
   private enum Quality {
@@ -60,11 +61,14 @@ public class drum : MonoBehaviour {
       case Quality.Perfect: command += 'A'; break;
       case Quality.Good: command += 'a'; break;
     }
-    
-    // if (get_quality(drums[(int)pata.name]) == Quality.Perfect) { command += 'F'; }
-    // if (get_quality(drums[(int)pon.name]) == Quality.Perfect) { command += 'A'; }
-    if (get_quality(drums[(int)don.name]) == Quality.Perfect) { command += 'S'; }
-    if (get_quality(drums[(int)chaka.name]) == Quality.Perfect) { command += 'D'; }
+    switch (get_quality(drums[(int)don.name])) {
+      case Quality.Perfect: command += 'S'; break;
+      case Quality.Good: command += 's'; break;
+    }
+    switch (get_quality(drums[(int)chaka.name])) {
+      case Quality.Perfect: command += 'D'; break;
+      case Quality.Good: command += 'd'; break;
+    }
 
     execute(command);
   }
@@ -103,8 +107,30 @@ public class drum : MonoBehaviour {
 
   void execute(string command) {
     if (command.Length > 0 && command.Length % 4 == 0) {
-      speaker.PlayOneShot(voices[(int)Command.March]);
+      if (get_action(command) == Action.March) { march(); }
+      if (get_action(command) == Action.Attack) { attack(); }
+      if (get_action(command) == Action.Defend) { defend(); }
       this.command = "";
     }
+  }
+
+  Action get_action(string command) {
+    if (command.ToLower() == "fffa") { return Action.March; }
+    if (command.ToLower() == "aafa") { return Action.Attack; }
+    if (command.ToLower() == "ddfa") { return Action.Defend; }
+    else { return Action.None; }
+  } 
+
+  void march() {
+    speaker.clip = voices[(int)Action.March];
+    speaker.PlayDelayed(0.5f);
+  }
+  void attack() {
+    speaker.clip = voices[(int)Action.Attack];
+    speaker.PlayDelayed(0.5f);
+  }
+  void defend() {
+    speaker.clip = voices[(int)Action.Defend];
+    speaker.PlayDelayed(0.5f);
   }
 }

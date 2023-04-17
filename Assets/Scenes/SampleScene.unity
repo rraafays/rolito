@@ -1656,8 +1656,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 69208bf904f6e4903943eaffdddbd11d, type: 3}
   - {fileID: 8300000, guid: 506fd9c38888640eb83bff5f2694e9b3, type: 3}
   voices:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 8300000, guid: 8b97b1b28f0204d75bb6f2d35073977d, type: 3}
+  - {fileID: 8300000, guid: a075d943c95124593afcacd35a03fa3a, type: 3}
   - {fileID: 8300000, guid: 17c2bfe59cdd54c7a98bc5bb53d1efc8, type: 3}
   speed: {x: 0.1, y: 0, z: 0}
   speaker: {fileID: 1632191767}
