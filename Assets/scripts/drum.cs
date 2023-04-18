@@ -1,14 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class drum : MonoBehaviour {
   public GameObject[] drums;
+  public TMP_Text combo_counter;
   public AudioClip[] sounds, voices; 
   public Vector3 speed;
   public AudioSource speaker;
   public string command;
-  private int combo_counter;
+  private int combo;
 
   private enum Name { 
     Pata, 
@@ -119,8 +121,9 @@ public class drum : MonoBehaviour {
         defend(action.Item1); 
       }
       this.command = "";
-      combo_counter += 1;
-      Debug.Log(combo_counter);
+      combo += 1;
+      combo_counter.text = combo.ToString();
+      Debug.Log(combo);
     }
   }
 
