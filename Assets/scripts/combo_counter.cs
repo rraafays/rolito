@@ -15,6 +15,12 @@ public class combo_counter : MonoBehaviour
   void Update() {
     badge.transform.Rotate(0, 0, -.1f);
     if (int.Parse(combo.text) == 0) {
+      icon.SetActive(true);
+      badge.SetActive(true);
+    }
+    else {
+      icon.SetActive(false);
+      badge.SetActive(false);
     }
   }
 }
