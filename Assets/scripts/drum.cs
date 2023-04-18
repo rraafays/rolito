@@ -10,7 +10,7 @@ public class drum : MonoBehaviour {
   public Vector3 speed;
   public AudioSource speaker;
   public string command;
-  private int combo;
+  public int combo;
 
   private enum Name { 
     Pata, 

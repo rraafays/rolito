@@ -253,10 +253,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   beat: {fileID: 8504570943470541012, guid: 59f88ca1643d946419975cea6d380fc1, type: 3}
-  spawn_rate: 0.5
   speaker: {fileID: 84684445}
   loops:
+  - {fileID: 8300000, guid: 3be03094393fc44a29c5ce08e3e6c01d, type: 3}
   - {fileID: 8300000, guid: 2b0cd405eb13741629b1a7f51bdf6527, type: 3}
+  - {fileID: 8300000, guid: f445c9c9ec7794196b613face7054609, type: 3}
+  - {fileID: 8300000, guid: 24e99c068b818447394fe5c27c1fdf68, type: 3}
+  - {fileID: 8300000, guid: 8024b9fe72fde4e4785d42026d363cad, type: 3}
+  - {fileID: 8300000, guid: fa2ab573d24da4e6989799c9b16347c3, type: 3}
+  - {fileID: 8300000, guid: e99c5be8a6bc244c29aa2cc12839b81e, type: 3}
+  drum: {fileID: 1632191764}
+  spawn_rate: 0.5
 --- !u!82 &84684445
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2797,6 +2804,7 @@ MonoBehaviour:
   speed: {x: 0.1, y: 0, z: 0}
   speaker: {fileID: 1632191767}
   command: 
+  combo: 0
 --- !u!82 &1632191767
 AudioSource:
   m_ObjectHideFlags: 0
