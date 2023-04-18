@@ -6,11 +6,14 @@ using TMPro;
 public class drum : MonoBehaviour {
   public GameObject[] drums;
   public TMP_Text combo_counter;
-  public AudioClip[] sounds, voices; 
   public Vector3 speed;
   public AudioSource speaker;
   public string command;
-  public int combo;
+  public int combo = 0;
+  public AudioClip[] sounds; 
+  public AudioClip[] attack_voices; 
+  public AudioClip[] defend_voices; 
+  public AudioClip[] march_voices; 
 
   private enum Name { 
     Pata, 
@@ -112,13 +115,13 @@ public class drum : MonoBehaviour {
     if (command.Length > 0 && command.Length % 4 == 0) {
       (Quality, Action) action = get_action(command);
       if (action.Item2 == Action.March) { 
-        march(action.Item1); 
+        march(combo); 
       }
       if (action.Item2 == Action.Attack) { 
-        attack(action.Item1); 
+        attack(combo); 
       }
       if (action.Item2 == Action.Defend) { 
-        defend(action.Item1); 
+        defend(combo); 
       }
       this.command = "";
       combo += 1;
@@ -149,16 +152,19 @@ public class drum : MonoBehaviour {
     else { return (Quality.Perfect, Action.None); }
   } 
 
-  void march(Quality quality) {
-    speaker.clip = voices[(int)Action.March];
+  void march(int combo) {
+    if (combo > 2) { speaker.clip = march_voices[2]; }
+    else speaker.clip = march_voices[combo];
     speaker.PlayDelayed(0.5f);
   }
-  void attack(Quality quality) {
-    speaker.clip = voices[(int)Action.Attack];
+  void attack(int combo) {
+    if (combo > 2) { speaker.clip = attack_voices[2]; }
+    else speaker.clip = attack_voices[combo];
     speaker.PlayDelayed(0.5f);
   }
-  void defend(Quality quality) {
-    speaker.clip = voices[(int)Action.Defend];
+  void defend(int combo) {
+    if (combo > 2) { speaker.clip = defend_voices[2]; }
+    else speaker.clip = defend_voices[combo];
     speaker.PlayDelayed(0.5f);
   }
 }

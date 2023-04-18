@@ -2792,19 +2792,27 @@ MonoBehaviour:
   - {fileID: 202618725}
   - {fileID: 395722040}
   combo_counter: {fileID: 910370047}
+  speed: {x: 0.1, y: 0, z: 0}
+  speaker: {fileID: 1632191767}
+  command: 
+  combo: 0
   sounds:
   - {fileID: 8300000, guid: 3d846fbfede13413185830db69f648fa, type: 3}
   - {fileID: 8300000, guid: 797a5d50b7bb640e8bc35f788e2c3dc8, type: 3}
   - {fileID: 8300000, guid: 69208bf904f6e4903943eaffdddbd11d, type: 3}
   - {fileID: 8300000, guid: 506fd9c38888640eb83bff5f2694e9b3, type: 3}
-  voices:
+  attack_voices:
   - {fileID: 8300000, guid: 8b97b1b28f0204d75bb6f2d35073977d, type: 3}
+  - {fileID: 8300000, guid: b91f899fd0f954a1897e3cf3a525f090, type: 3}
+  - {fileID: 8300000, guid: 0b1eb4c6c022f4149b7a21c909b5a1e4, type: 3}
+  defend_voices:
   - {fileID: 8300000, guid: a075d943c95124593afcacd35a03fa3a, type: 3}
+  - {fileID: 8300000, guid: 93033f1da58cc45a5a0c7b074fe9c99d, type: 3}
+  - {fileID: 8300000, guid: befd2e2cabdb743b0b4e9e3007456b9f, type: 3}
+  march_voices:
   - {fileID: 8300000, guid: 17c2bfe59cdd54c7a98bc5bb53d1efc8, type: 3}
-  speed: {x: 0.1, y: 0, z: 0}
-  speaker: {fileID: 1632191767}
-  command: 
-  combo: 0
+  - {fileID: 8300000, guid: 5e23c016892af4291915a83b931d328b, type: 3}
+  - {fileID: 8300000, guid: a4ce30ed2fbab40b7a43f09d2f79de0a, type: 3}
 --- !u!82 &1632191767
 AudioSource:
   m_ObjectHideFlags: 0
