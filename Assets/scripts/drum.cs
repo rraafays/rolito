@@ -14,6 +14,9 @@ public class drum : MonoBehaviour {
   public AudioClip[] attack_voices; 
   public AudioClip[] defend_voices; 
   public AudioClip[] march_voices; 
+  public bool marching;
+  public bool attacking;
+  public bool defending;
   private bool alt;
 
   private enum Name { 
@@ -154,6 +157,7 @@ public class drum : MonoBehaviour {
   } 
 
   void march(int combo) {
+    marching = true;
     if (combo > 2) { 
       if (alt) { speaker.clip = march_voices[1]; alt = false; }
       else { speaker.clip = march_voices[2]; alt = true; }
@@ -162,6 +166,7 @@ public class drum : MonoBehaviour {
     speaker.PlayDelayed(0.5f);
   }
   void attack(int combo) {
+    attacking = true;
     if (combo > 2) { 
       if (alt) { speaker.clip = attack_voices[1]; alt = false; }
       else { speaker.clip = attack_voices[2]; alt = true; }
@@ -170,6 +175,7 @@ public class drum : MonoBehaviour {
     speaker.PlayDelayed(0.5f);
   }
   void defend(int combo) {
+    defending = true;
     if (combo > 2) { 
       if (alt) { speaker.clip = defend_voices[1]; alt = false; }
       else { speaker.clip = defend_voices[2]; alt = true; }
